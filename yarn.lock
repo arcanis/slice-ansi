@@ -9,6 +9,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@arcanis/slice-ansi@workspace:."
   dependencies:
+    grapheme-splitter: ^1.0.4
     jest: ^26.1.0
   languageName: unknown
   linkType: soft
@@ -2017,6 +2018,13 @@ fsevents@^2.1.2:
   version: 4.2.4
   resolution: "graceful-fs@npm:4.2.4"
   checksum: d095ee4dc6eacc76814cd52d5d185b860119378a6fd4888e7d4e94983095c54d4f6369942a5e3d759cdbdd4e3ee7eaeb27a39ff938c6ee4610894fd9de46b6cb
+  languageName: node
+  linkType: hard
+
+"grapheme-splitter@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "grapheme-splitter@npm:1.0.4"
+  checksum: 6875e94add80360364a609e1fd0fe325e3b82326db2278dd36c1011a6bfc0e098811e791dedf9a88d4ae3f9d17a5c6a8d684948dd7b097f1f8d5ff905676e2b2
   languageName: node
   linkType: hard
 
