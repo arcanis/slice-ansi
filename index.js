@@ -1,13 +1,10 @@
-const ANSI_SEQUENCE = /^(.*?)(\x1b\[[^m]+m|\x1b\]8;;.*?\x07)/;
+const ANSI_SEQUENCE = /^(.*?)(\x1b\[[^m]+m|\x1b\]8;;.*?\x1b)/;
 
 module.exports = (orig, at = 0, until = orig.length) => {
   // Because to do this we'd need to know the printable length of the string,
   // which would require to do two passes (or would complexify the main one)
   if (at < 0 || until < 0)
     throw new RangeError(`Negative indices aren't supported by this implementation`);
-  
-  at = Math.max(0, Math.min(at, orig.length));
-  until = Math.max(0, Math.min(until, orig.length));
   
   const length = until - at;
   
@@ -29,10 +26,10 @@ module.exports = (orig, at = 0, until = orig.length) => {
     visible += displaying;
     
     if (typeof lookup[2] !== `undefined`)
-    output += lookup[2];
-    
+      output += lookup[2];
+
     orig = orig.slice(lookup[0].length);
   }
-  
+
   return output;
 };

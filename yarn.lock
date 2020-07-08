@@ -5,6 +5,14 @@ __metadata:
   version: 4
   cacheKey: 5
 
+"@arcanis/slice-ansi@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@arcanis/slice-ansi@workspace:."
+  dependencies:
+    jest: ^26.1.0
+  languageName: unknown
+  linkType: soft
+
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.10.4":
   version: 7.10.4
   resolution: "@babel/code-frame@npm:7.10.4"
@@ -4394,14 +4402,6 @@ fsevents@^2.1.2:
   checksum: 74dbd8a602409706748db730200efab53ba739ed7888310e74e45697efbd760981df6d6f0fa34b23e973135fb07d3b22adae6e6d58898f692a094e49692c6c33
   languageName: node
   linkType: hard
-
-"substr-ansi@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "substr-ansi@workspace:."
-  dependencies:
-    jest: ^26.1.0
-  languageName: unknown
-  linkType: soft
 
 "supports-color@npm:^5.3.0":
   version: 5.5.0
