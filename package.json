@@ -1,7 +1,7 @@
 {
   "name": "@arcanis/slice-ansi",
   "version": "1.0.0",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^26.1.0"
   }
 }
