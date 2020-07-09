@@ -31,6 +31,7 @@ describe(`sliceAnsi`, () => {
 
   it(`should slice across hyperlinks`, () => {
     expect(spliceAnsi(`foo\x1b]8;;https://example.org\x1b\\bar\x1b]8;;\x1b\\baz`, 1, 8)).toEqual(`oo\x1b]8;;https://example.org\x1b\\bar\x1b]8;;\x1b\\ba`);
+    expect(spliceAnsi(`foo\x1b]8;;https://example.org\x07bar\x1b]8;;\x07baz`, 1, 8)).toEqual(`oo\x1b]8;;https://example.org\x07bar\x1b]8;;\x07ba`);
   });
 
   it(`should work with a variety of complexish cases`, () => {

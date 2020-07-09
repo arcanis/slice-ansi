@@ -1,6 +1,6 @@
 const GraphemeSplitter = require(`grapheme-splitter`);
 
-const ANSI_SEQUENCE = /^(.*?)(\x1b\[[^m]+m|\x1b\]8;;.*?\x1b\\)/;
+const ANSI_SEQUENCE = /^(.*?)(\x1b\[[^m]+m|\x1b\]8;;.*?(\x1b\\|\u0007))/;
 const splitter = new GraphemeSplitter();
 
 module.exports = (orig, at = 0, until = orig.length) => {
