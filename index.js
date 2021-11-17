@@ -1,5 +1,3 @@
-const GraphemeSplitter = require(`grapheme-splitter`);
-
 const ANSI_SEQUENCE = /^(.*?)(\x1b\[[^m]+m|\x1b\]8;;.*?(\x1b\\|\u0007))/;
 
 let splitGraphemes;
@@ -15,6 +13,7 @@ function getSplitter() {
     const segmenter = new Intl.Segmenter(`en`, {granularity: `grapheme`});
     return splitGraphemes = text => Array.from(segmenter.segment(text), ({segment}) => segment);
   } else {
+    const GraphemeSplitter = require(`grapheme-splitter`);
     const splitter = new GraphemeSplitter();
     return splitGraphemes = text => splitter.splitGraphemes(text);
   }
