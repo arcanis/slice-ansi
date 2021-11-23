@@ -2,7 +2,7 @@
 
 > Slice strings while preserving ansi characters
 
-[![](https://img.shields.io/npm/v/typanion.svg)]() [![](https://img.shields.io/npm/l/typanion.svg)]() [![](https://img.shields.io/badge/developed%20with-Yarn%202-blue)](https://github.com/yarnpkg/berry)
+[![](https://img.shields.io/npm/v/@arcanis/slice-ansi.svg)]() [![](https://img.shields.io/npm/l/@arcanis/slice-ansi.svg)]() [![](https://img.shields.io/badge/developed%20with-Yarn%202-blue)](https://github.com/yarnpkg/berry)
 
 ## Installation
 
