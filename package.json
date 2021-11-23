@@ -6,5 +6,6 @@
   },
   "dependencies": {
     "grapheme-splitter": "^1.0.4"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }
