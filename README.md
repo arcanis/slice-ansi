@@ -1,6 +1,22 @@
 # `@arcanis/slice-ansi`
 
-Just a function to slice a string while preserving ansi characters.
+> Slice strings while preserving ansi characters
+
+[![](https://img.shields.io/npm/v/typanion.svg)]() [![](https://img.shields.io/npm/l/typanion.svg)]() [![](https://img.shields.io/badge/developed%20with-Yarn%202-blue)](https://github.com/yarnpkg/berry)
+
+## Installation
+
+```
+yarn add @arcanis/slice-ansi
+```
+
+## Why
+
+Unlike the [Chalk version](https://github.com/chalk/slice-ansi), this completely different implementation:
+
+- Supports terminal hyperlinks
+- Leverages the native grapheme splitting API if available
+- Doesn't require ESM, because it's an inane requirement for a library like this
 
 ## License (MIT)
 
