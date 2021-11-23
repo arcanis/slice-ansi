@@ -18,6 +18,8 @@ Unlike the [Chalk version](https://github.com/chalk/slice-ansi), this completely
 - Leverages the native grapheme splitting API if available
 - Doesn't require ESM, because it's an inane requirement for a library like this
 
+## Caveat
+
 This implementation also doesn't attempt to interpret the escape codes to optimize them away. So for instance, if you start with the following but only want to keep the first 16 characters:
 
 ```
