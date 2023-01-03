@@ -1,29 +1,15 @@
 const ANSI_SEQUENCE = /^(.*?)(\x1b\[[^m]+m|\x1b\]8;;.*?(\x1b\\|\u0007))/;
 
-let splitGraphemes;
-
-function getSplitter() {
-  if (splitGraphemes)
-    return splitGraphemes;
-
-  // Intl.Segmenter is part of https://github.com/tc39/proposal-intl-segmenter
-  // It got introduced in v8 8.8 (Node 16.0.0).
-  // TODO: stop using grapheme-splitter after support for Node 14 is dropped.
-  if (typeof Intl.Segmenter !== `undefined`) {
-    const segmenter = new Intl.Segmenter(`en`, {granularity: `grapheme`});
-    return splitGraphemes = text => Array.from(segmenter.segment(text), ({segment}) => segment);
-  } else {
-    const GraphemeSplitter = require(`grapheme-splitter`);
-    const splitter = new GraphemeSplitter();
-    return splitGraphemes = text => splitter.splitGraphemes(text);
-  }
-}
+let segmenter;
 
 module.exports = (orig, at = 0, until = orig.length) => {
   // Because to do this we'd need to know the printable length of the string,
   // which would require to do two passes (or would complexify the main one)
   if (at < 0 || until < 0)
     throw new RangeError(`Negative indices aren't supported by this implementation`);
+
+  // Introduced in Node 16.0.0.
+  segmenter ??= new Intl.Segmenter(`en`);
 
   const length = until - at;
 
@@ -34,7 +20,7 @@ module.exports = (orig, at = 0, until = orig.length) => {
 
   while (orig.length > 0) {
     const lookup = orig.match(ANSI_SEQUENCE) || [orig, orig, undefined];
-    let graphemes = getSplitter()(lookup[1]);
+    let graphemes = Array.from(segmenter.segment(lookup[1]), ({segment}) => segment);
 
     const skipping = Math.min(at - skipped, graphemes.length);
     graphemes = graphemes.slice(skipping);
