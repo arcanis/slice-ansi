@@ -6,6 +6,8 @@
 
 ## Installation
 
+> Important: Requires Node 16.
+
 ```
 yarn add @arcanis/slice-ansi
 ```
@@ -15,7 +17,7 @@ yarn add @arcanis/slice-ansi
 Unlike the [Chalk version](https://github.com/chalk/slice-ansi), this completely different implementation:
 
 - Supports terminal hyperlinks
-- Leverages the native grapheme splitting API if available
+- Leverages the native grapheme splitting API
 - Doesn't require ESM, because it's an inane requirement for a library like this
 
 ## Caveat
