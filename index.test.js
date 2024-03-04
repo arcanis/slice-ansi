@@ -34,6 +34,10 @@ describe(`sliceAnsi`, () => {
     expect(spliceAnsi(`foo\x1b]8;;https://example.org\x07bar\x1b]8;;\x07baz`, 1, 8)).toEqual({slice: `oo\x1b]8;;https://example.org\x07bar\x1b]8;;\x07ba`, visible: 7});
   });
 
+  it(`should remove mode change escape codes`, () => {
+    expect(spliceAnsi(`\x1b[?2004hfoo`, 0, 3)).toEqual({slice: `foo`, visible: 3});
+  });
+
   it(`should work with a variety of complexish cases`, () => {
     expect(spliceAnsi(`\x1b[93m➤\x1b[39m foo`, 0, 5)).toEqual({slice: `\x1b[93m➤\x1b[39m foo`, visible: 5});
   });

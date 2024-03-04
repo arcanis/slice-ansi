@@ -1,4 +1,9 @@
-const ANSI_SEQUENCE = /^(.*?)(\x1b\[[^m]+m|\x1b\]8;;.*?(\x1b\\|\u0007))/;
+// match[0] = full match
+// match[1] = visible text
+// match[2] = relevant escape code
+// match[3] = skippable escape code
+const ANSI_SEQUENCE = /^(.*?)(?:(\x1b\[[^m]+m|\x1b\]8;;.*?(?:\x1b\\|\u0007))|(\x1b\[\?[0-9]+[a-zA-Z]))/;
+
 const segmenter = new Intl.Segmenter(`en`, {granularity: `grapheme`});
 
 function sliceAnsi(orig, at = 0, until = orig.length) {
@@ -28,7 +33,7 @@ function sliceAnsi(orig, at = 0, until = orig.length) {
     visible += displaying;
 
     if (typeof lookup[2] !== `undefined`)
-    slice += lookup[2];
+      slice += lookup[2];
 
     orig = orig.slice(lookup[0].length);
   }
