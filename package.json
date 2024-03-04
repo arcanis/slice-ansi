@@ -1,12 +1,9 @@
 {
   "name": "@arcanis/slice-ansi",
   "license": "MIT",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "devDependencies": {
     "jest": "^26.1.0"
   },
-  "dependencies": {
-    "grapheme-splitter": "^1.0.4"
-  },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@4.1.0+sha224.bc24d7f5afc738464f3d4e95f4e6e7829a35cee54a0fd527ea5baa83"
 }
