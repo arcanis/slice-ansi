@@ -3133,9 +3133,9 @@ fsevents@^2.1.2:
   linkType: hard
 
 "lodash@npm:^4.17.13, lodash@npm:^4.17.15":
-  version: 4.17.18
-  resolution: "lodash@npm:4.17.18"
-  checksum: c62503ac0b323abffb4680e2c88eff06550daeca23cda881066d38608c99a5eccceab9e5bbdc1862de6698799ada730abc747a2a4dfd61dd89a3ef48598956b1
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
   languageName: node
   linkType: hard
 
